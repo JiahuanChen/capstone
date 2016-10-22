@@ -9,6 +9,7 @@ Usage:
 from vectorization import vectorize
 vector = vectorize(input_fname = "*.txt" )
 
+
 input: patent data(txt file)
 output: contant the following 2 part:
         vector[0]: 3 lists of 0: PatentNo., 1: Date, 2: Assignee name
@@ -56,7 +57,7 @@ def vectorize(input_fname = "result.txt", array_tpye = "int8"):
         #CPC
         cpc = line[7].replace('+', ' ')
         need_vect[3].append(cpc)
-    #Extracting data finished.
+    #Extracting data finished
     
     #Vectorize 4 attributes respectively
     vectorizer = CountVectorizer(min_df=1,dtype = array_tpye)
@@ -66,8 +67,11 @@ def vectorize(input_fname = "result.txt", array_tpye = "int8"):
         feature_vec = X.toarray()
         vect.append(feature_vec)
     
+    #Merge four vectors into a single array
     vecterized  = numpy.concatenate((vect[0],vect[1],vect[2],vect[3]), \
-                                     axis = 1)    
+                                     axis = 1)
+    
+    #Merge vectorized and vector array
     output = [] 
     output.append(not_vect)
     output.append(vecterized)
