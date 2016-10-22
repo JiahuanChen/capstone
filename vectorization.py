@@ -6,9 +6,8 @@ Created on Tue Oct 18 14:50:09 2016
 
 Usage:
 
-from vectorization import vectorization
-vector = vectorization(input_fname = "*.txt" )
-
+from vectorization import vectorize
+vector = vectorize(input_fname = "*.txt" )
 
 input: patent data(txt file)
 output: contant the following 2 part:
