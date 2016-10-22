@@ -71,7 +71,7 @@ def vectorize(input_fname = "result.txt", array_tpye = "int8"):
     vecterized  = numpy.concatenate((vect[0],vect[1],vect[2],vect[3]), \
                                      axis = 1)
     
-    #Merge vectorized and vector array
+    #Merge unvectorized data and vector array
     output = [] 
     output.append(not_vect)
     output.append(vecterized)
